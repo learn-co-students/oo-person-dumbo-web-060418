@@ -1,10 +1,12 @@
+require 'pry'
+
 class Person
 
     attr_reader :name, :happiness, :hygiene
     attr_accessor :bank_account
 
     def initialize(name)
-      @name=name
+      @name = name
       @bank_account = 25
       @happiness = 8
       @hygiene = 8
@@ -45,6 +47,7 @@ class Person
       elsif self.happiness < 0
         self.happiness = 0
       end
+      # binding.pry
     end
 
     def work_out
@@ -54,9 +57,23 @@ class Person
     end
 
 
-    def call_friend()
+    def call_friend(friend)
       self.happiness += 3
-      self.happiness_checker
       friend.happiness += 3
+      "Hi #{friend.name}! It's #{self.name}. How are you?"
+    end
+
+    def start_conversation(friend, topic)
+      if topic == 'politics'
+        self.happiness -= 2
+        friend.happiness -= 2
+        'blah blah partisan blah lobbyist'
+      elsif topic == 'weather'
+        self.happiness += 1
+        friend.happiness += 1
+        'blah blah sun blah rain'
+      else
+        'blah blah blah blah blah'
+      end
     end
 end
