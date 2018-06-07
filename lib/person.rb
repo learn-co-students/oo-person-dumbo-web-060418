@@ -1,18 +1,9 @@
-require "pry"
-# your code goes here
+
 
 class Person
   attr_accessor :bank_account
   attr_reader :name, :happiness, :hygiene
-  # attr_writer
-  # @@all = []
 
-
-# def self.find_person(name)
-#   @@all.find do |person|
-#     person.name == name
-#   end
-# end
 
   def initialize(name)
     @name = name
@@ -20,7 +11,7 @@ class Person
 
     @happiness = 8
     @hygiene = 8
-    #REMEMBER!!! Max value for happiness or hygiene is 10, and min value is 0
+
   end
 
   def happiness=(happiness) #Writer
@@ -88,7 +79,6 @@ class Person
     friend.happiness += 3
 
     return "Hi #{friend.name}! It's #{self.name}. How are you?"
-
     # accept another instance of person class
     #increment happiness of both caller and person accepting call by three
     #if stella calls felix, return "hi felix, its stella" (stella is the one calling)
@@ -111,5 +101,3 @@ class Person
   end
 
 end
-
-# Pry.start
