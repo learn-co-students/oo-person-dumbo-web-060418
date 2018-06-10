@@ -17,11 +17,11 @@ class Person
     end
 
     def happy?
-      true == self.happiness > 7
+      self.happiness > 7 ? true : false
     end
 
     def clean?
-      true == self.hygiene > 7
+      self.hygiene > 7 ? true : false
     end
 
     def get_paid(salary)
@@ -41,13 +41,9 @@ class Person
     end
 
     def happiness=(num)
-      @happiness =  num
-      if self.happiness > 10
-        self.happiness = 10
-      elsif self.happiness < 0
-        self.happiness = 0
-      end
-      # binding.pry
+      @happiness = num
+      @happiness = 10 if @happiness > 10
+      @happiness = 0 if @happiness < 0
     end
 
     def work_out
